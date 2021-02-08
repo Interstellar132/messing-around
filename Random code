@@ -1,4 +1,4 @@
-```// Example:
+// Example:
 levelID = '66426565'
 levelName = 'cool vibes'
 Creator = 'Interstellar Ca'
@@ -36,4 +36,4 @@ client.on('message', message => {
         message.channel.send( {embed} );
     }
 });
-```
+
