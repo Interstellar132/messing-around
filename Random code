@@ -1,0 +1,39 @@
+```// Example:
+levelID = '66426565'
+levelName = 'cool vibes'
+Creator = 'Interstellar Ca'
+starsRequested = '5 :star:'
+song = '90 miles - Kingdom'
+length = 'Long'
+coins = '2 coins'
+description = 'A simple NC level I made. Enjoy ;)'
+version = '4'
+gameVersion = '2.11'
+client.on('message', message => {
+    if (message.content === '>req ' + levelID) {
+        const embed = new Discord.MessageEmbed()
+        .setTitle(levelName + ' by ' + Creator + ' has been successfully requested.')
+        .setColor('#90ee90')
+        message.channel.send( {embed} );
+    }
+});
+
+client.on('message', message => {
+    if (message.content === '>level ' + levelID) {
+        const embed = new Discord.MessageEmbed()
+        .setTitle(levelName + ' by ' + Creator)
+        .setDescription('Stars requested: ' + starsRequested)
+        .setThumbnail('https://upload.wikimedia.org/wikipedia/commons/5/5b/Hard_Icon.png')
+        .addField('__Descrption:__ ',  description, true)
+        .addField('__Song:__ ' , song, true)
+        .addField('__Length:__ ' , length, true)
+        .addField('__Coins:__ ' ,  coins, true)
+        .addField('__Version:__ ' , version, true)
+        .addField('__Game Version:__' , gameVersion, true)
+        .setFooter(`Searched by ${message.author.tag}`)
+        .setTimestamp()
+        .setColor('#FFFFFF')
+        message.channel.send( {embed} );
+    }
+});
+```
